@@ -1,0 +1,93 @@
+/* Styles for the modal container */
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Styles for the form container */
+.form {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  width: 400px;
+}
+
+/* Styles for payment options buttons */
+.payment--options {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.payment--options button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+/* Styles for the credit card separator */
+.separator {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.separator hr.line {
+  flex-grow: 1;
+  height: 1px;
+  background-color: #ccc;
+  border: none;
+  margin: 0 10px;
+}
+
+.separator p {
+  margin: 0;
+  color: #777;
+}
+
+/* Styles for the credit card info form */
+.credit-card-info--form {
+  margin-bottom: 20px;
+}
+
+.input_container {
+  margin-bottom: 10px;
+}
+
+.input_label {
+  font-weight: bold;
+  display: block;
+}
+
+.input_field {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+}
+
+.split {
+  display: flex;
+}
+
+/* Styles for the purchase button */
+.purchase--btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.purchase--btn:hover {
+  background-color: #0056b3;
+}

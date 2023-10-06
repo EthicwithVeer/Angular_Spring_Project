@@ -1,0 +1,31 @@
+/* Style the navigation bar */
+.navbar {
+    background-color: #8955d2; /* Change this to your desired background color */
+    color: #fff; 
+  }
+  
+  .navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .navbar-nav .nav-link {
+    color: #fff; 
+    margin-right: 10px; 
+  }
+  
+  .container {
+    background-color: #f2f2f2; 
+    padding: 20px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px;
+    margin-top: 20px; 
+  }
+
+  body{
+    background-image: url(https://img.freepik.com/free-photo/open-book-icon-symbol-yellow-background-education-bookstore-concept-3d-rendering_56104-1334.jpg?size=626&ext=jpg&ga=GA1.1.465485171.1694704984&semt=sph);
+    background-size: cover;
+  background-position: center;
+  height: 750px;
+  }
+  

@@ -1,0 +1,94 @@
+<div *ngIf="viewMode; else editable">
+  <div *ngIf="currentTutorial.id">
+    <h4>Book</h4>
+    <div>
+      <label><strong>Book Name:</strong></label> {{ currentTutorial.title }}
+    </div>
+    <div>
+      <label><strong>Description:</strong></label>
+      {{ currentTutorial.description }}
+    </div>
+    <div>
+      <label><strong>Status:</strong></label>
+      {{ currentTutorial.published ? "Published" : "Pending" }}
+    </div>
+
+    <a
+      class="p-1 mb-1 bg-gradient-primary text-dark"
+      routerLink="/admindashboard/tutorials/{{ currentTutorial.id }}"
+    >
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHEAAAB6CAMAAAC/Z0whAAAAk1BMVEX///8UEhMREiQAAAD5+fkaGiAMDiIMCQrz8/NQUFAIAwU9PDxpaWmJiIlBQEEGAAR9fH2srKzr6+vh4eErKyscGxy9vb2Tk5OlpaXa2tqampoAABtsbHUgHx9LSkpZWVl1dHXLy8tJSVMuLjsZGSqEhIoeHy41NTZiYWJWV2E3Nz9hYmomJzVBQUlQUFZ0dH0AABT03UqaAAAEdUlEQVRoge2ZZ5eqOhSGkc0xoqB0VLC3kaLn//+6k4CFkugQgx/u5Z01o4ArjzvZLRlJ6tSpU6dOnTp1+lyKMiBSlC+gbG9uaKuxs1i47sIZq9paN1vj2qYxhlxDdNOEXGmt4DwDEVKPojaImzWmIRqNAE/Ced4JgEHLiJZgnunQ5/IB9MTyNiPmbLayiNb65XxmxIFIoLeo89BkUQL6AnmKXp9QgOWPU+SLNNFa1Qwcwmqq9YpfQ6SJ9qkKRLDcmG75LhIXGbNeFQjg1cwGQxjQrsYgwoN7NceFmSigVfUZcGbSurausBIFVBZlCxHo0mBcjxTYiCKq5cFh6EkzlwJsnm5s3yhqfXO8eQW4tPASVnMrrl1640o8hbJujjerANeKZFbWFeNcw25s4aYyzC19KKNJ6a5PjC59EmCkeTyBWPG9e/qYlm7DtDbLruE1Ny+zRZ2UifmqWMXhEZg1ILHxpGr6tDFWUUvOgAMgkwFFoEcBkgekoWoc/VVi/pXt4vjEQpNRIDkSXJkIat1EAvRYFZmju3kQ854z71asglMSp5kxgRxl6k4sZY7CopExLRYQ9ZoDqURl/Jhpsk6D04RB5GrgaMTNwyZY4WD5Yc7pDweQSnz4zdDBjuEz55Svu6EQldPdcUgdYropb1NMIT48E+Y4Ml3mRmPNBaQR7yk1q+31Vu4OHPMBaUTtTny1iEOXL49TiaN8Hkmu2bC9hrvVqBMVJyNOxvVOpzCnJi+QQrRyXyE5vd63fQ6kEO38Wn+Vvz8Asoioh6O7Rw8M9NnulEEkFcOgmwjuZy04ZR0XqIecAatEwfjDbQ3dV0m2WdKI6Fn0ebeMlHg8IYQzOLXPAPexhBbvboNCVHGfLSmUfIrg5zGjswXv+Q2FuCYNGiW9gfP0UbylE5hX5ziF1xsNAF8pfAQNBRIH5qAWGXg78nRRhXQFIolSpV8lOxqj4JmbbJMsmFhMqADOvLhhu522iCU+gx83sVqlLi3zzk4s8WYink11Wgt0tQWinaVwBCOdVufbIOqQATf07XYLxEHWBDBLUgvELKOSXP41InHGF0cm4okkNGDEPjIRT8R+g3ovqq54Iua9bEaFE3EDR5qcLxI1eHOaIJwIsHx90CaaiHcab3o10cTZ+F032kZe/a8S0Uj/nfx8s/c5kZTf3+nWx35ObKr/BXHESWSfgb0R3xEZEeus9i2Rf6OsPf+t/3sB74kVkTJdjhpLfVnQ3mvQWJ/xOnXq1KlTp05flvJtSX++Lan/bUkyFn6V88tgj3+zd0e5JWFicJbP0TGKkzTZ+YZxuSTp1kjjPu+Qt69M/ga5IcFDObG/3V7D8BKG6fVs+IeD7uupnXLbEGwv0Q4r3O2S7T7Z7aLkHJ+xLuE5/JsR5f4hjs/bSxhdd7HuY6KfmuuAmxiHhzA8xFf8ckjDA744b/HbOA6v2/6NmATpMU2O+DqKgmMUJNF+xz2pZFb3+YTKfXIVyPtElv8e8U3yOPcc8pM/72dX/T4/8J2k1kZm6R9FOl6U2ewlLAAAAABJRU5ErkJggg==" alt="edit" width="45px" >
+    </a>
+  </div>
+
+  <div *ngIf="!currentTutorial">
+    <br />
+    <p>Please click on a Book...</p>
+  </div>
+</div>
+
+<ng-template #editable>
+  <div *ngIf="currentTutorial.id" class="edit-form">
+    <h4>Book</h4>
+    <form>
+      <div class="form-group">
+        <label for="title">Book Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="title"
+          [(ngModel)]="currentTutorial.title"
+          name="title"
+        />
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input
+          type="text"
+          class="form-control"
+          id="description"
+          [(ngModel)]="currentTutorial.description"
+          name="description"
+        />
+      </div>
+
+      <div class="form-group">
+        <label><strong>Status:</strong></label>
+        {{ currentTutorial.published ? "Published" : "Pending" }}
+      </div>
+    </form>
+
+    <button
+      class="badge badge-primary mr-2"
+      *ngIf="currentTutorial.published"
+      (click)="updatePublished(false)"
+    >
+      img
+    </button>
+    <button
+      *ngIf="!currentTutorial.published"
+      class="badge badge-primary mr-2"
+      (click)="updatePublished(true)"
+    >
+      <img src="https://cdn.dribbble.com/users/410036/screenshots/3546053/switch-db.gif" alt="publish" width="45px">
+    </button>
+
+    <button class="badge  mr-2" (click)="deleteTutorial()">
+      <img src="https://assets-v2.lottiefiles.com/a/e09820ea-116b-11ee-8e93-4f2a1602d144/HdbA8EJlUN.gif" alt="delete" width="45px">
+    </button>
+
+    <button
+      type="submit"
+      class="badge  mb-2"
+      (click)="updateTutorial()"
+    >
+      <img src="https://cdn.dribbble.com/users/442750/screenshots/2196790/3.gif" alt="update" width="45px">
+    </button>
+    <p>{{ message }}</p>
+  </div>
+
+  <div *ngIf="!currentTutorial.id">
+    <br />
+    <p>Cannot access this Book...</p>
+  </div>
+</ng-template>
